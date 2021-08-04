@@ -15,6 +15,7 @@ namespace WSVentas
 {
     public class Startup
     {
+        readonly string Micors="Micors";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,6 +26,13 @@ namespace WSVentas
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /*permitir el origen de las peticiones*/
+            services.AddCors(options => {
+                options.AddPolicy(name: Micors, builder =>
+                {
+                    builder.WithOrigins("*");
+                });
+            });
             services.AddControllers();
         }
 
@@ -39,6 +47,8 @@ namespace WSVentas
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(Micors);
 
             app.UseAuthorization();
 
