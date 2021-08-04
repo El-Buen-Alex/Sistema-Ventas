@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ApiclienteService } from '../services/apicliente.service';
+import {response} from '../Model/response';
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor() { }
-
+  public lista!: any[];
+  public columnas : string[]=['id','nombre'];
+  constructor(
+    private apiCliente : ApiclienteService
+  ) {
+    
+   }
   ngOnInit(): void {
+    this.getClientes();
   }
-
+  getClientes(){
+    this.apiCliente.getClients().subscribe(response => {
+      this.lista=response.data;
+    })
+  }
 }

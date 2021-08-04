@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {HttpClientModule} from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
