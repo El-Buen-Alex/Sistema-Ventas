@@ -1,5 +1,9 @@
 
 <div>
+    <button mat-raised-button color="primary" (click)="openAdd()">Nuevo Cliente</button>
+</div>
+
+<div>
     <table mat-table [dataSource]="lista" class="mat-elevation-z4">
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef>#</th>

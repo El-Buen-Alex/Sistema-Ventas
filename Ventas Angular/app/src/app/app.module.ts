@@ -9,12 +9,19 @@ import { ClienteComponent } from './cliente/cliente.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { dialogClienteComponent } from './cliente/dialog/dialogcliente.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ClienteComponent
+    ClienteComponent,
+    dialogClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,12 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatSidenavModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSnackBarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

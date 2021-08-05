@@ -30,6 +30,7 @@ namespace WSVentas
             services.AddCors(options => {
                 options.AddPolicy(name: Micors, builder =>
                 {
+                    builder.WithHeaders("*");
                     builder.WithOrigins("*");
                 });
             });

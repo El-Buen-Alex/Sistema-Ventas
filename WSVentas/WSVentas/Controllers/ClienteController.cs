@@ -21,7 +21,7 @@ namespace WSVentas.Controllers
             {
                 using (VentaRealContext db = new VentaRealContext())
                 {
-                    var lista = db.Clientes.ToList();
+                    var lista = db.Clientes.OrderByDescending(d=>d.IdCliente).ToList();
                     respuesta.data = lista;
                     respuesta.exito = 1;
                 }
